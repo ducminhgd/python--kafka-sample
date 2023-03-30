@@ -1,2 +1,3 @@
-# python--kafka-sample
+# Python Kafka sample
+
 Using Kafka with Python samples
