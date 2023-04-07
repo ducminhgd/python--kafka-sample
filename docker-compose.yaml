@@ -19,17 +19,9 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
     volumes:
-      - kafka-data:/bitnami/kafka
+      - ${HOME}/docker-volumes/kafka/data:/bitnami/kafka
     networks:
       - mybridge
-
-volumes:
-  kafka-data:
-    driver: local
-    driver_opts:
-      o: 'bind'
-      type: 'none'
-      device: '${HOME}/docker-volumes/kafka/data'
 
 networks:
   myhost:

@@ -27,6 +27,11 @@ LOGGING = {
             'handlers': os.getenv('LOGGING_LOGGERS_MAIN_HANDLERS', 'console').split(','),
             'propagate': False
         },
+        'kafka': {
+            'level': os.getenv('LOGGING_LOGGERS_KAFKA_LEVEL', 'DEBUG'),
+            'handlers': os.getenv('LOGGING_LOGGERS_KAFKA_HANDLERS', 'console').split(','),
+            'propagate': False
+        },
     },
 }
 
@@ -34,3 +39,4 @@ logging.config.dictConfig(LOGGING)
 
 
 KAFKA_BROKERS = os.getenv('KAFKA_BROKERS', '127.0.0.1:9092')
+BASIC_TOPIC = os.getenv('BASIC_TOPIC', 'basic_topic')
